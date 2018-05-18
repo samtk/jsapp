@@ -1,0 +1,37 @@
+<HTML>
+  <Script>
+  	var fSize = 10;
+  
+    function move() {
+      var x = event.clientX;
+      var y = event.clientY;
+     
+     if(event.ctrlKey){
+      	fSize++;
+      }
+      if(event.altKey){
+      	fSize--;
+      }
+
+      document.getElementById("a").style.top = y;
+      document.getElementById("a").style.left = x;
+	  document.getElementById("a").style.fontSize = fSize;
+    }
+    
+    function takeOut(){
+    	if (document.getElementById("t").value != ""){
+    		document.getElementById("a").innerHTML= document.getElementById("t").value;
+      }
+    }
+
+  </Script>
+
+  <body onmousemove="move()">
+    <input type="text" id="t" onmouseleave="takeOut()">
+    <span id="a" style="position:absolute;top:0;left:0;color:red">QA Consulting</span>
+  </body>
+
+
+
+</HTML>
+
